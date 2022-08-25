@@ -5,9 +5,10 @@
 }
 
 body {
-  max-width: 50rem;
+  max-width: 60rem;
   padding: 0 1rem;
   margin: 0 auto;
+  background: #1c1c27;
 }
 
 ul, li {
