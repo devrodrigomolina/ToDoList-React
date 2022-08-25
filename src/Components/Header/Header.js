@@ -9,7 +9,7 @@ const Header = () => {
       <ul className={style.ul}>
         <Logo />
         <NavLink exact to="/" className={style.link}>
-          Todas Tasks
+          Tasks
         </NavLink>
         <NavLink to="completeds" className={style.link}>
           Completas
@@ -18,6 +18,7 @@ const Header = () => {
           Incompletas
         </NavLink>
       </ul>
+
     </nav>
   );
 };
