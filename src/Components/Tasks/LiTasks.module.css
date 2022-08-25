@@ -1,0 +1,11 @@
+.li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 25px;
+  margin-bottom: 1rem;
+  background: #272833;
+  height: 50px;
+  color: white;
+  font-size: 1.1rem;
+}
