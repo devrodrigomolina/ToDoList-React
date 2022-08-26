@@ -8,7 +8,7 @@ const Header = () => {
     <nav className={style.nav}>
       <ul className={style.ul}>
         <Logo />
-        <NavLink exact to="/" className={style.link}>
+        <NavLink exact='true' to="/" className={style.link}>
           Tasks
         </NavLink>
         <NavLink to="completeds" className={style.link}>
