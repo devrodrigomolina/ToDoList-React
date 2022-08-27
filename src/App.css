@@ -24,3 +24,8 @@ nav .active {
   font-weight: bold;
   font-size: 1rem;
 }
+
+.complete {
+  color: rgb(69, 0, 134);
+  text-decoration: line-through
+}
