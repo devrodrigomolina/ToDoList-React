@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./LiTasks.module.css";
-import { FaTrashAlt } from "react-icons/fa";
-import Input from "../CreateTask/Input";
+import DeleteTask from "./DeleteTask";
+import Input from "../FormTask/Input";
 
-const LiTasks = ({ task }) => {
+const LiTasks = ({ task, index, array, setTask }) => {
+  const [checkbox, setCheckbox] = useState(false);
+
   return (
     <li className={styles.li}>
-      <Input type='checkbox' className={styles.input}/>
-      {task} 
-      <FaTrashAlt style={{color: 'red'}} />
+      <Input
+        value="value"
+        checked={checkbox}
+        onChange={({ target }) => setCheckbox(target.checked)}
+        type="checkbox"
+      />
+      <p className={checkbox ? 'complete' : ''}>{task}</p>
+
+      <DeleteTask index={index} array={array} setTask={setTask} />
     </li>
   );
 };
