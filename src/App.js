@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css'
 import Header from "./Components/Header/Header";
-import Completeds from "./Components/Tasks/Completeds";
-import Incompleteds from "./Components/Tasks/Incompleteds";
-import AllTasks from "./Components/Tasks/AllTasks";
+import Completeds from "./Components/Pages/Completeds";
+import Incompleteds from "./Components/Pages/Incompleteds";
+import AllTasks from "./Components/Pages/AllTasks";
 
 function App() {
   return ( 
