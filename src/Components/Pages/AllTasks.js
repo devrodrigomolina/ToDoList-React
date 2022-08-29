@@ -5,9 +5,9 @@ import Input from "../FormTask/Input";
 import Button from "../FormTask/Button";
 import { useState } from "react";
 
-const AllTasks = () => {
+const AllTasks = ({ task, setTask }) => {
   const [value, setValue] = useState("");
-  const [task, setTask] = useState([]);
+  /* const [task, setTask] = useState([]); */
 
   const addTask = () => {
     if(value) setTask([...task, value]);
