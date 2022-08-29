@@ -26,6 +26,7 @@ nav .active {
 }
 
 .complete {
-  color: rgb(69, 0, 134);
+  color: rgb(103, 4, 196);
+  transition: all .3s;
   text-decoration: line-through
 }
