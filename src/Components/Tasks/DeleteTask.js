@@ -1,7 +1,7 @@
 import React from "react";
 import { FaTrashAlt } from "react-icons/fa";
 
-const DeleteTask = ({ array, index, setTask }) => {
+const DeleteTask = ({ array, index, setTask, opacity }) => {
   const handleDelete = () => {
     const tmpArray = [...array];
     tmpArray.splice(index, 1);
@@ -12,7 +12,7 @@ const DeleteTask = ({ array, index, setTask }) => {
     <>
       <FaTrashAlt
         onClick={handleDelete}
-        style={{ color: "red", cursor: "pointer" }}
+        style={{ color: "red", cursor: "pointer", opacity: `${opacity}` }}
       />
     </>
   );

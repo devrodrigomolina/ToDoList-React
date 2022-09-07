@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useContext } from "react";
+import LiTasks from "../Tasks/LiTasks";
+import { TaskContext } from "../../context/taskContext";
+import { useCheckbox } from "../Hooks/useCheckbox";
 
-const Completeds = () => {
+const Completeds = (/* { task } */) => {
+  const { task } = useContext(TaskContext)
+  const { checkbox } = useCheckbox();
   return (
-    <div>Completeds</div>
-  )
-}
+    <>
+    {checkbox && task.map(tasks => <LiTasks task={tasks} />) }
+    </>
+  );
+};
 
-export default Completeds
+export default Completeds;

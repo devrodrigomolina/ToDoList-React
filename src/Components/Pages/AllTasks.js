@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import LiTasks from "../Tasks/LiTasks";
 import styles from "./AllTasks.module.css";
 import Input from "../FormTask/Input";
 import Button from "../FormTask/Button";
 import { useState } from "react";
+import { TaskContext } from "../../context/taskContext";
 
-const AllTasks = ({ task, setTask }) => {
+
+const AllTasks = () => {
   const [value, setValue] = useState("");
-  /* const [task, setTask] = useState([]); */
-
+  const { task, setTask } = useContext(TaskContext)
+  
   const addTask = () => {
-    if(value) setTask([...task, value]);
+    if(value) setTask([...task, value])
   };
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify([...task]))
+  }, [task])
 
   return (
     <div>
@@ -32,7 +38,7 @@ const AllTasks = ({ task, setTask }) => {
               key={index}
               task={task}
               index={index}
-              array={array}
+              array={task}
               setTask={setTask}
             />
           ))}

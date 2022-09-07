@@ -9,17 +9,18 @@ const LiTasks = ({ task, index, array, setTask }) => {
 
   const { checkbox, setCheckbox } = useCheckbox();
 
+  
   return (
     <li className={styles.li}>
       <Input
         value="value"
         checked={checkbox}
-        onChange={({ target }) => setCheckbox(!checkbox)}
+        onChange={() => setCheckbox(!checkbox)}
         type='checkbox'
       />
       <p className={checkbox ? "complete" : ""}>{task}</p>
 
-      <DeleteTask index={index} array={array} setTask={setTask} />
+      <DeleteTask index={index} array={array} setTask={setTask} opacity={'0'}/>
     </li>
   );
 };

@@ -1,9 +1,22 @@
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
+export const TaskContext = createContext();
+/*   const { returnStorage } = useLocalStorage("test", task); */
 
-const TaskContext = createContext();
+const TaskProvider = (props) => {
+  const getLocalStorage = localStorage.getItem('tasks')
 
-const TaskProvider = (props) => (
-  <TaskContext.Provider value={{}}>{props.children}</TaskContext.Provider>
-);
+  const [task, setTask] = useState(() => {
+    if(getLocalStorage !== null) {
+      return JSON.parse(getLocalStorage)
+    }
+   return []
+  })
 
-export default TaskProvider
+  return (
+    <TaskContext.Provider value={{ task, setTask }}>
+      {props.children}
+    </TaskContext.Provider>
+  );
+};
+
+export default TaskProvider;
